@@ -26,4 +26,7 @@ header{
     .img-box{
         width: 200px;
     }
+    header{
+        height: 70px;
+    }
 }
