@@ -1,8 +1,12 @@
+
+
 h3 {
     font-family: "Pacifico", "Brush Script MT", cursive;
-    font-size: 88px;
+    font-size: clamp(48px, 7vw, 88px);
+    font-weight: 800;
     text-align: center;
-    margin-top: 20px;
+
+    margin: 30px 0 10px;
 
     background: linear-gradient(
         90deg,
@@ -16,23 +20,104 @@ h3 {
     -webkit-text-fill-color: transparent;
 }
 
+
+.image-Option {
+    width: 100%;
+    padding: 15px 20px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+    box-sizing: border-box;
+}
+
+.image-Option button {
+    padding: 10px 20px;
+
+    border: 1px solid #b8b8b8;
+    border-radius: 25px;
+
+    background: transparent;
+    color: inherit;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.2s ease;
+}
+
+.image-Option button:hover {
+    background: linear-gradient(
+        90deg,
+        #a78bfa,
+        #f472b6
+    );
+
+    border-color: transparent;
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+
+    h3 {
+        margin-top: 25px;
+        margin-bottom: 5px;
+    }
+
     .image-Option {
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 45px;
+        gap: 10px;
+        padding: 12px 15px 25px;
     }
 
     .image-Option button {
-        padding: 14px;
-        border-radius: 20px;
-        border: 1px solid black;
-        background: white;
-        transition: background-color 0.25s , color 0.25s;
+        padding: 9px 17px;
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    h3 {
+        font-size: 52px;
+        margin-top: 20px;
     }
 
-    .image-Option button:hover{
-        background-color: black;
-        color: white;
+    .image-Option {
+        padding: 10px 12px 25px;
+        gap: 8px;
     }
+
+    .image-Option button {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    h3 {
+        font-size: 45px;
+    }
+
+    .image-Option {
+        gap: 7px;
+    }
+
+    .image-Option button {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+}
