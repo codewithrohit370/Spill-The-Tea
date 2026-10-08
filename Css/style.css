@@ -5,29 +5,181 @@
     font-family: Arial;
 }
 
-
-header{
-    height: 100px;
+header {
     width: 100%;
+    min-height: 80px;
+
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+
+    padding: 12px 4%;
+    box-sizing: border-box;
+    gap: 25px;
 }
 
-.img-box {
-    height: 100%;
-    width: 350px;
+/* Logo / Website Name */
+header p {
+    margin: 0;
+
+    font-family: "Pacifico", "Brush Script MT", cursive;
+    font-size: 38px;
+    font-weight: 400;
+    white-space: nowrap;
+
+    background: linear-gradient(
+        90deg,
+        #ff6b9d,
+        #c084fc,
+        #ffb86c
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.img-box img{
-    width: 100%;
+/* Search */
+header input {
+    width: min(450px, 40%);
+    height: 42px;
+
+    padding: 0 18px;
+    box-sizing: border-box;
+
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+
+    font-size: 16px;
+    background: transparent;
 }
 
-@media (max-width:600px) {
-    .img-box{
-        width: 200px;
+header input:focus {
+    border-color: #c084fc;
+}
+
+/* Buttons */
+.Auth-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Auth-btn button {
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 22px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.Auth-btn button:first-child {
+    background: transparent;
+    border: 1px solid #c084fc;
+}
+
+.Auth-btn button:last-child {
+    color: white;
+    background: linear-gradient(
+        90deg,
+        #ff6b9d,
+        #a855f7
+    );
+}
+
+.Auth-btn button:hover {
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 900px) {
+
+    header {
+        gap: 15px;
+        padding: 12px 3%;
     }
-    header{
-        height: 70px;
+
+    header p {
+        font-size: 30px;
+    }
+
+    header input {
+        width: 35%;
+    }
+
+    .Auth-btn button {
+        padding: 9px 15px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    header {
+        width: 100%;
+        padding: 12px 16px 16px;
+
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+            "logo auth"
+            "search search";
+
+        gap: 12px;
+        box-sizing: border-box;
+    }
+
+    header p {
+        grid-area: logo;
+
+        margin: 0;
+        text-align: left;
+
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .Auth-btn {
+        grid-area: auth;
+
+        display: flex;
+        gap: 6px;
+        justify-content: flex-end;
+    }
+
+    .Auth-btn button {
+        padding: 8px 12px;
+        font-size: 13px;
+        border-radius: 20px;
+        white-space: nowrap;
+    }
+
+    header input {
+        display: none;
+       
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    header p {
+        font-size: 29px;
+    }
+
+    header input {
+        display: none;
+    }
+
+    .Auth-btn button {
+        min-width: 100px;
+        padding: 9px 14px;
+        font-size: 14px;
     }
 }
