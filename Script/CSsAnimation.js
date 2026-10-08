@@ -78,7 +78,7 @@ const signupForm = document.querySelector(".signup-form");
 const switchSignup = document.querySelector(".switch-signup");
 const switchLogin = document.querySelector(".switch-login");
 
-function openLogin() {
+export function openLogin() {
 
     authOverlay.style.visibility = "visible";
 

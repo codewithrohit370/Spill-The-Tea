@@ -1,4 +1,5 @@
 import { imageData } from "./data.js";
+import { openLogin } from "./CSsAnimation.js";
 gsap.registerPlugin(ScrollTrigger);
 
 const imageContainer = document.querySelector(".Images-Show-Case");
@@ -21,15 +22,15 @@ function showImages(category = "All") {
                 <img src="${image.src}" alt="Image">
 
                 <div class="image-actions">
-                    <button title="Like">
+                    <button class="Like">
                         <i class="fa-regular fa-heart"></i>
                     </button>
 
-                    <button title="Dislike">
+                    <button class="Dislike">
                         <i class="fa-regular fa-thumbs-down"></i>
                     </button>
 
-                    <button title="Comment">
+                    <button class="Comment">
                         <i class="fa-regular fa-comment"></i>
                     </button>
                 </div>
@@ -55,6 +56,27 @@ function showImages(category = "All") {
     }
 });
 }
+
+let likeBtn = document.querySelectorAll(".Like")
+likeBtn.forEach((btn)=>{
+    btn.addEventListener('click' , ()=>{
+        openLogin();
+    })
+})
+
+let DislikeBtn = document.querySelectorAll(".Dislike")
+DislikeBtn.forEach((btn)=>{
+    btn.addEventListener('click' , ()=>{
+        openLogin();
+    })
+})
+
+let commentBtn = document.querySelectorAll(".Comment")
+commentBtn.forEach((btn)=>{
+    btn.addEventListener('click' , ()=>{
+        openLogin();
+    })
+})
 
 const filterButtons = document.querySelectorAll(".image-Option button");
 
@@ -97,4 +119,5 @@ document.querySelector(".Random").addEventListener("click", () => {
 document.querySelector(".Dark-Humor").addEventListener("click", () => {
     showImages("Dark-Humor");
 });
+
 
