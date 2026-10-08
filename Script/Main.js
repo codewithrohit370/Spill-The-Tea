@@ -1,4 +1,5 @@
 import { imageData } from "./data.js";
+gsap.registerPlugin(ScrollTrigger);
 
 const imageContainer = document.querySelector(".Images-Show-Case");
 
@@ -15,7 +16,7 @@ function showImages(category = "All") {
     filteredImages.forEach((image) => {
 
         html += `
-            <div class="image-card">
+            <div class="image-card" data-product-id="${image.id}">
 
                 <img src="${image.src}" alt="Image">
 
@@ -38,7 +39,44 @@ function showImages(category = "All") {
     });
 
     imageContainer.innerHTML = html;
+
+   gsap.from(".image-card", {
+    opacity: 0,
+    y: 80,
+    scale: 0.9,
+    duration: 0.8,
+    stagger: 0.12,
+    ease: "power3.out",
+
+    scrollTrigger: {
+        trigger: ".Images-Show-Case",
+        start: "top 80%",
+        toggleActions: "play none none reverse"
+    }
+});
 }
+
+const filterButtons = document.querySelectorAll(".image-Option button");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        gsap.fromTo(
+            button,
+            {
+                scale: 0.9
+            },
+            {
+                scale: 1,
+                duration: 0.3,
+                ease: "back.out(2)"
+            }
+        );
+
+    });
+
+}); 
 
 document.querySelector(".All").addEventListener("click", () => {
     showImages("All");

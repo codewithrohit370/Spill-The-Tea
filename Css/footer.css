@@ -19,7 +19,7 @@
 }
 
 .contact-section span {
-    color: #F6A61F;
+    color: #ee46ee;
     font-family: "Pacifico", "Brush Script MT", cursive;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .icon {
-    color: #F6A61F;
+    color: #ee46ee;
 }
 
 .icons {
@@ -76,7 +76,7 @@
 }
 
 .icon-1:hover {
-    background-color: #F6A61F;
+    background-color: #f564d1;
 }
 
 
@@ -105,7 +105,7 @@
 
 @media (max-width:1024px) {
     .footer {
-        padding: 70px 20px;
+        padding: 25px 20px;
         grid-template-columns: 1fr 1fr;
 
     }
@@ -114,7 +114,7 @@
 
 @media (max-width:749px) {
     .footer {
-        padding: 70px 30px;
+        padding: 25px 30px;
         grid-template-columns: 1fr;
     }
 }
