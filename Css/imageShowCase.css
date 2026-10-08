@@ -1,0 +1,185 @@
+/* =========================
+   PINTEREST IMAGE GRID
+========================= */
+
+.Images-Show-Case {
+    width: 94%;
+    max-width: 1500px;
+    margin: 20px auto 50px;
+
+    columns: 5 220px;
+    column-gap: 16px;
+}
+
+.image-card {
+    position: relative;
+
+    width: 100%;
+    margin-bottom: 16px;
+
+    break-inside: avoid;
+
+    overflow: hidden;
+    border-radius: 14px;
+
+    cursor: pointer;
+}
+
+.image-card img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Dark overlay */
+
+.image-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.image-actions {
+    position: absolute;
+
+    left: 88%;
+    bottom: 20px;
+
+    transform: translate(-50%, 15px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 2;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.image-actions button {
+    padding: 8px;
+
+    border: none;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background-color: transparent;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.image-actions button:hover {
+    transform: scale(1.12);
+}
+
+
+.image-card:hover img {
+    transform: scale(1.03);
+}
+
+.image-card:hover::after {
+    opacity: 1;
+}
+
+.image-card:hover .image-actions {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translate(-50%, 0);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+
+    .Images-Show-Case {
+        columns: 4 200px;
+        column-gap: 14px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .Images-Show-Case {
+        width: 92%;
+        columns: 3 180px;
+        column-gap: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .Images-Show-Case {
+        width: 94%;
+        columns: 2 140px;
+        column-gap: 10px;
+    }
+
+    .image-card {
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    .image-actions {
+        bottom: 10px;
+        gap: 5px;
+    }
+
+    .image-actions button {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .Images-Show-Case {
+        columns: 2 120px;
+        column-gap: 8px;
+    }
+
+    .image-actions button {
+        width: 30px;
+        height: 30px;
+        font-size: 13px;
+    }
+}
