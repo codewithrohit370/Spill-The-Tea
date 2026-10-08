@@ -1,0 +1,38 @@
+h3 {
+    font-family: "Pacifico", "Brush Script MT", cursive;
+    font-size: 88px;
+    text-align: center;
+    margin-top: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #a78bfa 0%,
+        #f472b6 50%,
+        #fb923c 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+    .image-Option {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 45px;
+    }
+
+    .image-Option button {
+        padding: 14px;
+        border-radius: 20px;
+        border: 1px solid black;
+        background: white;
+        transition: background-color 0.25s , color 0.25s;
+    }
+
+    .image-Option button:hover{
+        background-color: black;
+        color: white;
+    }
