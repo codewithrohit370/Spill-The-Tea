@@ -41,39 +41,39 @@ function showImages(category = "All") {
 
     imageContainer.innerHTML = html;
 
-   gsap.from(".image-card", {
-    opacity: 0,
-    y: 80,
-    scale: 0.9,
-    duration: 0.8,
-    stagger: 0.12,
-    ease: "power3.out",
+    gsap.from(".image-card", {
+        opacity: 0,
+        y: 80,
+        scale: 0.9,
+        duration: 0.8,
+        stagger: 0.12,
+        ease: "power3.out",
 
-    scrollTrigger: {
-        trigger: ".Images-Show-Case",
-        start: "top 80%",
-        toggleActions: "play none none reverse"
-    }
-});
+        scrollTrigger: {
+            trigger: ".Images-Show-Case",
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+        }
+    });
 }
 
 let likeBtn = document.querySelectorAll(".Like")
-likeBtn.forEach((btn)=>{
-    btn.addEventListener('click' , ()=>{
+likeBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
         openLogin();
     })
 })
 
 let DislikeBtn = document.querySelectorAll(".Dislike")
-DislikeBtn.forEach((btn)=>{
-    btn.addEventListener('click' , ()=>{
+DislikeBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
         openLogin();
     })
 })
 
 let commentBtn = document.querySelectorAll(".Comment")
-commentBtn.forEach((btn)=>{
-    btn.addEventListener('click' , ()=>{
+commentBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
         openLogin();
     })
 })
@@ -98,7 +98,7 @@ filterButtons.forEach(button => {
 
     });
 
-}); 
+});
 
 document.querySelector(".All").addEventListener("click", () => {
     showImages("All");
