@@ -32,14 +32,14 @@ function showSlide(index) {
         } else {
             isSliding = false;
 
-           
+
             if (currentSlide === slides.length - 1) {
                 setTimeout(() => {
                     carousel.style.scrollBehavior = "auto";
                     carousel.scrollLeft = 0;
                     currentSlide = 0;
 
-      
+
                     setTimeout(() => {
                         carousel.style.scrollBehavior = "smooth";
                     }, 50);
